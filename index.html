@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Sentinel-2 on AWS</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="Sentinel-2 on AWS" />
+		<meta name="keywords" content="Sentinel, ESA, AWS, Satellite, imagery, Sinergise" />
+		<meta name="author" content="Sinergise" />
+		
+		<link rel="icon" type="image/png" href="img/favicons/favicon.ico" sizes="16x16" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+		<link href="css/classic-min.css" media="all" rel="stylesheet" />
+		<link href="css/browser.css" media="all" rel="stylesheet" />
+		
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/moment.js"></script>
+		<script src="js/jquery.geocomplete.min.js"></script>
+		<script src="js/jQAllRangeSliders-withRuler-min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/custom.js"></script>
+    	<script src="js/jquery.stickit.js"></script>
+    	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71798570-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="container auto">
+				<div class="row">
+					<div class="logo">
+						<a href="index.html" class="logo-image">
+						</a>
+							<p><!-- <img src="img/AWS_logo.png" alt="sinergise"> --> <img src="img/sinergise_logo_small.png" alt="sinergise"></p>
+					</div>
+					<div class="col">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="header-back">
+			<div class="header-back-container">
+				<div class="container auto">
+					<div class="row">
+						<div class="col">
+							<div class="page-info page-info-simple">
+								<h1 class="page-title">Sentinel-2 on AWS</h1>
+								<h2 class="page-description">Sentinel-2 data is available for anyone to use via Amazon S3.</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main_content auto">
+			<div class="main">
+				<div id="sidebar">
+					<ul id="sub_list">
+						<li ><a href="#AboutData"> About the data </a></li>
+						<li><a href="#DataStructure">Data structure</a></li>
+						<li><a href="#ImagerySearch">Browse through data</a></li>
+						<li><a href="#AccessingData">Accessing the Data</a></li>
+						<li><a href="#AccessingData">Featured uses</a></li>
+						<li><a href="#Inquiry">Contact us</a></li>
+					</ul>
+				</div>
+	
+				<div class="content">
+					<div class="category-info" id="block-view">
+						<a id="PublicBucket" name="PublicBucket"></a>
+                        <h3 class="category-block-intro-title">Sentinel-2 data is available for anyone via Amazon S3, either over Internet or within AWS. All Sentinel-2 scenes are made available, often within hours of production. </h3>
+						<h4 class="category-description">Earth observation data provided by the <a href="http://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2">Sentinel-2</a> satellites are revolutionizing the market of space applications. 
+						Free, full and open access to data with very short revisit times, high spatial resolution, and good spectral resolution can benefit several sectors - agriculture, environmental and land-change monitoring, natural disaster response, insurance and others.</h4>						
+								
+						<div class="block-view ">
+							<div class="block-item">
+								<div class="block-item-header">
+                                	<a id="SentinelProject" name="SentinelProject"></a>
+								</div>
+                                <div class="block-item-content"> 
+                                	<p>The Sentinel-2 mission is a land monitoring constellation of two satellites (Sentinel-2A was launched on 23 June 2015 and Sentinel-2B will follow in the second half of 2016) 
+                                        that provide high resolution optical imagery and provide continuity for the current SPOT and Landsat missions. The mission will provide a global coverage of the 
+                                        Earth's land surface every 10 days with one satellite (and 5 days with 2 satellites), making the data of great use in on-going studies.</p>
+                               		<p>Sentinel-2 delivers high-resolution optical images for land monitoring, emergency response and security services. The satellite carries a multispectral imager 
+                                            with a swath of 290 km. The imager provides a versatile set of 13 spectral bands spanning from the visible and near infrared to the shortwave infrared, featuring four 
+                                            spectral bands at 10 m, six bands at 20 m and three bands at 60 m spatial resolution.</p>
+                                	<p>Sentinel-2 is the result of close collaboration between <a href="http://www.esa.int/">ESA</a>, the European Commission, industry, service providers and data users.</p>
+                                 </div>
+							</div>
+						</div>
+					</div>
+					<div class="category-info " id="grid-view">
+						<a id="AboutData" name="AboutData"></a>
+                        <h3 class="category-title"> About the data</h3>
+                        <h4 class="category-description">Sentinel-2 data available on Amazon S3 allows anyone can use it to create new products on the AWS cloud without needing to worry about the cost of storing data or the time required to download it.</h4>					</div>
+					<div class="grid-view js-grid-view">
+					<table class="table table-striped">
+					<tbody>
+					<tr>
+					<td class="table-title">SOURCE</td>
+					<td><a href="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2">European Commission (Copernicus), ESA</a></td>
+					</tr>
+					<tr>
+					<td class="table-title">CATEGORY</td>
+					<td>Satellite imagery</td>
+					</tr>
+					<tr>
+					<td class="table-title">FORMAT</td>
+					<td><a href="http://jpeg.org/jpeg2000/">.jp2</a>, .txt </td>
+					</tr>
+					<tr>
+					<td class="table-title">LICENSE</td>
+					<td>Access to Sentinel data is free, full and open for the broad Regional, National, European and International user community. View <a href="https://scihub.copernicus.eu/twiki/do/view/SciHubWebPortal/TermsConditions">Terms and conditions</a>.</td>
+					</tr>
+					<tr>
+					<td class="table-title">STORAGE SERVICE</td>
+					<td>Amazon S3</td>
+					</tr>
+					<tr>
+					<td class="table-title">LOCATION</td>
+					<td>s3://sentinel-pds in EU Central region</td>
+					</tr>
+					<tr>
+					<td class="table-title">UPDATE FREQUENCY</td>
+					<td>New Sentinel data are added regularly, usually within few hours after they are available on Sentinel Scientific Hub.</td>
+					</tr>
+					</tbody></table>
+
+					</div>
+					<div class="category-block">
+						<a id="DataStructure" name="DataStructure"></a>
+                        <h3 class="category-block-title">Data structure</h3>
+                        <p>Each file is its own object in Amazon S3. The data are organised per tiles using the <a href="https://en.wikipedia.org/wiki/Military_grid_reference_system">Military grid system</a> (<a href="https://sentinels.copernicus.eu/documents/247904/1955685/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml/ec05e22c-a2bc-4a13-9e84-02d5257b09a8">latest KML file</a>).
+						The basic data format is the following:</p>
+                        <p class="code">tiles/[UTM code]/latitude band/square/[year]/[month]/[day]/[sequence]/DATA</p>
+               			<p>For example, the files for individual scene are available in the following location: <a href="http://sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com/#tiles/10/S/DG/2015/12/7/0/">
+                                    http://sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com/#tiles<span class="blue">/10/S/DG/2015/12/7/0/</span></a></p></p>
+                       	<p>Where:</p>
+						<ul class="category-block-content">
+							<li class="category-block-content-item">
+								<p><span class="code">[UTM code]</span> = e.g. <span class="blue">10</span> - grid zone designator.</p>
+							</li>
+							<li class="category-block-content-item">
+								 <p><span class="code">latitude band</span> = e.g. <span class="blue">S</span> - latitude band are lettered C- X (omitting the letters "I" and "O").</p>
+							</li>
+							<li class="category-block-content-item">
+								<p><span class="code">square</span> = e.g <span class="blue">DG</span> - pair of letters designating one of the 100,000-meter side grid squares inside the grid zone.</p>
+							</li>
+                                           <li class="category-block-content-item">
+								<p><span class="code">[year]</span> = e.g. <span class="blue">2015</span> - is the year the data was collected.</p>
+							</li>
+                                           <li class="category-block-content-item">
+								<p><span class="code">[month]</span> = e.g. <span class="blue">12</span> - is the month of the year the data was collected (without leading zeros).</p>
+							</li>
+                                           <li class="category-block-content-item">
+								<p><span class="code">[day]</span> = e.g. <span class="blue">7</span> - is the day of the month the data was collected (without leading zeros).</p>
+							</li>
+							 <li class="category-block-content-item">
+								<p><span class="code">[sequence]</span> = e.g. <span class="blue">0</span> - in most cases there will be only one image per day. In case there are more (in northern latitudes), the following images will be 1,2,…\.</p>
+							</li>
+							<li class="category-block-content-item">
+							<p><span class="code">DATA</span> - data for each tile are organised as in original product <a href="https://sentinel.esa.int/documents/247904/349490/S2_MSI_Product_Specification.pdf">S2 MSI Product Specification</a>.</p>
+							</li>
+						</ul>
+						<h4 class="category-description">Metadata</h4>
+						<p>The metadata of the product, which tile is part of, are available in parallel folder (<span class="code">productInfo.json</span> contains the name of the product). This can be found in <span class="code">products/[year]/[month]/[day]/[product name]</span>.
+					</div>
+					    <div class="category-block" id="embedMap">
+                   			<a id="ImagerySearch" name="ImagerySearch"></a>
+                       		<h3 class="category-block-title">Browse through data</h3>
+							<p>You can browse through the contents of the Sentinel-2 Amazon Public Data set via the Sentinel Image browser.</p>
+                   			<!-- <a class="button large blue" href="http://portal-test.geopedia.world/sentinel/index.html" target="_blank">Sentinel Image browser</a>  -->
+							<div id="settings">
+								<h3 class="dateHeading">Date range: <a class="active" id="sliderMode">Slider</a><a id="manualMode">Manual</a></h3>				
+								<div id="dateSlider" class="dateHolder"></div>
+								<div id="manualDate" class="dateHolder">
+									<label>From:</label><input id="startDate" size="9" />
+									<label>To:</label><input id="endDate" size="9" />
+								</div>
+								<h3>Cloud coverage:</h3>				
+								<div id="cloudSlider"></div>
+							</div>
+                   			<iframe frameborder="0" height="100%" id="geopediaWidget" scrolling="no" 
+								src="http://www.geopedia.world?widgetId=sentinelBrowser&showStatusBar=false&sidebar=right&panZoomMode=ZOOM&panZoomPosition=BOTTOM_RIGHT" width="100%"></iframe>
+<!-- 							<div id="iframeFix"></div> -->
+							<div id="loadingPanel" class="mainLoadingWrap">
+								<div class="inner">
+									<h1>Sentinel Image browser</h1>
+									<div class="spinner">
+									  <div class="bounce1"></div>
+									  <div class="bounce2"></div>
+									  <div class="bounce3"></div>
+									</div>
+									<p>Loading application. Please wait ...</p>
+								</div>
+							</div>
+				    	</div>
+					<div class="category-info " id="mixed-view">
+						<a id="AccessingData" name="AccessingData"></a>
+                        <h3 class="category-title">Accessing the Data</h3>
+                        <h4 class="category-description">Users can search for files using the index pages and access individual or related sets of files through the Sentinel Public bucket.</h4> 
+                        <h4 class="category-description">The address for the public bucket is: <br /><a href="http://sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com">sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com</a></h4>
+                  	</div>
+                  	<div class="category-info">
+						<a id="FeaturedUses" name="FeaturedUses"></a>
+						<h3 class="category-title">Featured uses</h3>
+						<div class="steps-box">
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title"><a href="http://www.sentinel-hub.com/apps/wms">Sentinel-2 WMS service by Sinergise</a></h4>
+								<p>Browse through data in full resolution via cloud GIS or using standard web services (WMS/WMTS).</p>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title"><a href="https://remotepixel.ca/projects/satellitesearch.html">Sentinel imagery viewer by Remote Pixel</a></h4>
+								<p>Easy to use browser through S-2 tiles with possibility to download data from AWS.</p>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<h4 class="step-title"><a href="https://fetch.astrodigital.com">Sentinel imagery service by Astro Digital</a></h4>
+								<p>Continuous monitoring of areas of interest.</p>
+							</li>
+							<li class="step">
+								<span class="step-number">4</span>
+								<h4 class="step-title"><a href="http://www.sentinel-hub.com/apps/postcards/">Postcards from Space</a></h4>
+								<p>Technology demonstration of the Sentinel 2 WMS, providing access to full archive</p>
+							</li>
+							<li class="step">
+								<span class="step-number">5</span>
+								<h4 class="step-title"><a href="http://satcat.eoproc.com/cat-01/dev-online.html?&config=aws-01">SatCat - interactive satellite imagery browser</a></h4>
+								<p>Search for Sentinel-2 and Landsat-8 data with an interactive preview</p>
+							</li>
+							<li class="step">
+								<span class="step-number">6</span>
+								<h4 class="step-title"><a href="https://github.com/sinergise/Sentinel2ProductIngestor/">Sentinel2 Product Ingestor</a></h4>
+								<p>Sinergise manages ingestor, which is used to download and process data on AWS.</p>
+							</li>
+						</ul>
+						</div>
+                  	</div>
+					<div class="category-info ">
+                        <a id="Inquiry" name="Inquiry"></a>
+                        <h3 class="category-title">Contact us</h3>
+                         <h4 class="category-description">In case you would be interested in adding some value added services to the data or you would like to show us what you can do with Sentinel data on AWS, please contact us.</h4>
+						<div class="contacts">
+						<a class="button blue"href="MAILTO:info@sinergise.com">Send Message</a>
+						</div>
+                   		<p>We’re ready to see new applications of Sentinel’s data. <!-- Collaborators are welcome to contribute to the data ingest code at <a href="https://github.com/sinergise">github.com/sinergise</a> --></p>
+                    </div>
+	 			</div>
+	  		</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="footer-logo-wrapper">
+							<!-- Logo Image -->
+                               <p><a href="http://www.sinergise.com"><img src="img/sinergise_logo_black.png" alt="sinergise"></img></a></p>
+														<p class="copyright helper right">
+								</p>
+						</div>
+					</div>
+					<div class="col">
+						<div class="footer-wrapper">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  	<!-- JavaScript -->
+		<script>
+    		$('#sidebar').stickit({scope: StickScope.Parent});
+  		</script>
+	</body>
+</html>
+

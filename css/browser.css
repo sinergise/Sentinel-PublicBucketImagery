@@ -1,0 +1,461 @@
+@import url("fonts.css");
+
+i.icon {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+}
+.mainLoadingWrap {
+	background: #333;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+.mainLoadingWrap h1 {
+	margin: 30px;
+	font-size: 40px;
+	font-weight: 300;
+}
+.mainLoadingWrap img {
+	opacity: .6;
+	margin: 10px;
+	display: inline-block;
+}
+.mainLoadingWrap .inner {
+	height: 300px;
+    left: 0;
+    margin: -150px 0 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+}
+.spinner {
+  margin: 30px auto;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #B6BF00;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+
+#embedMap {
+	position: relative;
+}
+#embedMap iframe {
+	height: 550px;
+}
+#embedMap #header {
+	background: #222;
+	padding: 10px;
+}
+#embedMap #header > h2 {
+	font-size: 20px;
+	color: #fff;
+	font-weight: normal;
+	float: left;
+}
+
+#standalone .rightPanel {
+	float: right;
+	opacity: .5;
+}
+.rightPanel img {
+	max-width: 100px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.clearfix {
+	clear: both;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.inlineSlider{
+	margin-top: 50px;
+	width: 400px;
+	float: left;
+}
+.ui-rangeSlider {
+	margin: 30px 50px 20px;
+}
+
+#map {
+	overflow: hidden;
+}
+#resultsHolder {
+	float: right;
+	margin-right: -410px;
+	position: relative;
+	height: 100%;
+}
+#resultsLoader {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,.5);
+}
+#resultsLoader i {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -15px;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	animation: 0.6s linear 0s normal none infinite spin;
+	color: #B6BF00;
+}
+.sortHeader {
+	padding: 4px;
+/* 	background: #B6BF00; */
+	background: #f2f2f2;
+	border-bottom: 1px solid #bbb;
+}
+.sortHeader span,
+.sortHeader a {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.sortHeader a, .roundBtn {
+	border: 1px solid #ccc;
+	cursor: pointer;
+	padding: 6px;
+	border-radius: 0 0 4px 4px;
+}
+.roundBtn {
+	margin: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	background: #B6BF00;
+	border: none;
+	color: #fff;
+	border-radius: 30px;
+}
+.roundBtn:hover {
+	box-shadow: 0 0 3px #ccc;
+}
+.roundBtn:active {
+	box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
+}
+.sortHeader a.active {
+	background: #B6BF00;
+	border-color: #B6BF00;
+	color: #fff;
+}
+.sortHeader a.first {
+	border-radius: 4px 4px 0 0;
+	margin-right: -1px;
+}
+#resultsHolder h2 {
+	margin: 0;
+}
+#mapResults {
+	width: 400px;
+	height: calc(100% - 70px);
+	overflow: auto;
+}
+
+.feature {
+	padding: 6px;
+	margin-bottom: 15px;
+	clear: both;
+}
+.featInfo i {
+	margin-right: 5px;
+}
+.feature > img {
+	float: left;
+	margin-right: 10px;
+}
+#hideResults {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+#geopediaWidget, #resultsHolder {
+	transition: all ease 0.5s;
+}
+.hasResults #geopediaWidget {
+	width: calc(100% - 401px);
+}
+.hasResults #resultsHolder {
+	margin: 0;
+}
+.pagNav, .ui-datepicker-header.ui-widget-header a {
+	border: 2px solid #B6BF00;
+	border-radius: 30px;
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	position: relative;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.ui-datepicker-header.ui-widget-header a {
+	position: absolute;
+}
+.ui-datepicker-header.ui-widget-header a span {
+	background: none;
+}
+.ui-datepicker-header.ui-widget-header a:hover {
+	background: none;
+}
+.ui-datepicker-header.ui-widget-header a:before {
+	border: none;
+	background: none;
+}
+.pagNav:before, .ui-datepicker-header.ui-widget-header a:before {
+	content: "";
+	border-top: 4px solid #B6BF00;
+	border-left: 4px solid #B6BF00;
+	transform: rotate(-45deg);
+	position: absolute;
+	left: 5px;
+	width: 4px;
+	height: 4px;
+	top: 5px;
+}
+.pagNav.next:before,.ui-datepicker-header.ui-widget-header a.ui-datepicker-next:before {
+	transform: rotate(135deg);
+}
+.pagNav[disabled], .pagNav[disabled]:before {
+	border-color: #ccc;
+	cursor: default;
+}
+#pagCounter {
+	float: right;
+	font-size: 12px;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+#resultsPaging {
+	border-top: 1px solid #ccc;
+	background: #f2f2f2;
+	padding: 3px 5px;
+}
+#iframeFix {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+input[type="text"] {
+	border: 1px solid #ccc;
+	padding: 8px;
+}
+#geolocation {
+	padding-right: 50px;
+}
+.dateHeading a {
+	float: right;
+	font-weight: normal;
+	font-size: 13px;
+	color: rgba(255,255,255,.6);
+}
+.dateHeading a.active {
+	font-weight: bold;
+	color: #fff;
+}
+@-moz-keyframes spin {
+	0% {
+	    transform: rotate(0deg);
+	}
+	100% {
+	    transform: rotate(359deg);
+	}
+}
+@-webkit-keyframes fa-spin {
+	0% {
+	    transform: rotate(0deg);
+	}
+	100% {
+	    transform: rotate(359deg);
+	}
+}
+.searchHolder {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 150px;
+	white-space: nowrap;
+}
+#manualDate {
+	margin: 30px 40px 20px;
+}
+#manualDate input {
+	margin-right: 15px;
+	padding: 4px;
+}
+.dateHeading a:first-child {
+	border-left: 1px solid #fff;
+	margin-left: 5px;
+	padding-left: 5px;
+}
+#find {
+	display: inline-block;
+    font-size: 20px;
+    margin-left: -30px;
+    vertical-align: middle;
+}
+#map {
+	position: relative;
+}
+
+#settings {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	max-height: calc(90vh) - 50px;
+	overflow: auto;
+	padding: 15px;
+	background: rgba(0,0,0,.5);
+	color: #fff;
+	width: 400px;
+}
+#embedMap #settings {
+	position: relative;
+	background: none;
+	left: auto;
+	top: auto;
+	width: auto;
+	color: #666;
+}
+.ui-widget-content.ui-slider,
+.ui-rangeSlider .ui-rangeSlider-innerBar {
+	border-radius: 5px;
+	border: none;
+	height: 16px;
+	background: #f2f2f2;
+	box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
+}
+.ui-rangeSlider .ui-rangeSlider-bar {
+	background: #B6BF00;
+	box-shadow: 0 -2px 2px rgba(0,0,0,.3) inset;
+	height: 16px;
+	margin: 3px 0;
+}
+.ui-rangeSlider .ui-rangeSlider-handle {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: none;
+}
+.ui-rangeSlider .ui-rangeSlider-handle:before {
+	content: "";
+	position: absolute;
+	top: -6px;
+	left: -1px;
+	border-top: 3px solid #555;
+	border-right: 3px solid transparent;
+	border-left: 3px solid transparent;
+}
+.ui-rangeSlider-label {
+	font-size: 11px;
+	background: #555;
+	padding: 3px;
+	margin-bottom: 7px;
+}
+
+.ui-widget-header {
+	background: #f2f2f2;
+	border-radius: 0;
+	border: none;
+}
+.ui-datepicker-calendar th {
+	background: #ccc;
+	border-bottom: 1px solid #aaa;
+}
+.ui-datepicker {
+	border-radius: 0;
+	padding: 0;
+	border: none;
+	box-shadow: 0 3px 3px rgba(0,0,0,.5);
+	font-size: 13px;
+}
+.ui-datepicker-calendar td {
+	padding: 4px;
+	border: 1px solid #ddd;
+	background: #f2f2f2;
+}
+.ui-datepicker-calendar td.ui-satate-default:hover {
+	background: #fff;
+}
+.ui-datepicker-calendar td.ui-state-disabled {
+	background: #fff;
+	border: none;
+}
+.ui-datepicker-calendar a {
+	color: #B6BF00;
+	font-weight: bold;
+}
+.ui-datepicker-calendar .ui-state-default {
+	border: none;
+	background: none;
+}
+.ui-datepicker-calendar .ui-state-highlight {
+}
+.ui-datepicker-calendar td.ui-state-disabled a {
+	color: #aaa;
+	font-weight: normal;
+}
+.ui-datepicker-calendar td.ui-datepicker-today {
+	background: #777;
+}
+.ui-datepicker-calendar td.ui-datepicker-current-day {
+	background: #B6BF00;
+	color: #fff;
+}
+.ui-datepicker-current-day a {
+	color: #fff;
+}
+#embedMap .ui-rangeSlider-label {
+	color: #fff;
+}

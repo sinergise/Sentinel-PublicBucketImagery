@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="localhost">
+	<meta charset='utf-8'>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link href="css/classic-min.css" media="all" rel="stylesheet" />
+	<link href="css/browser.css" media="all" rel="stylesheet" />
+	<link href="css/basic.css" media="all" rel="stylesheet" />
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+     <script src="js/moment.js"></script>
+     <script src="js/jquery.geocomplete.min.js"></script>
+	<script src="js/jQAllRangeSliders-withRuler-min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/custom.js"></script>
+</head>
+<body>
+	<div id="header" class="clearfix">
+		<div class="searchHolder">
+<!-- 			<label>Search place:</label> -->
+			<input id="geocomplete" type="text" placeholder="Go to location" size="40" />
+ 			<a id="find"><i class="icon icon-search"></i></a>
+		</div>
+		<h2>Sentinel Image browser</h2>
+		<a id="check"><i class="icon icon-search"></i>Refresh</a>
+		<div class="rightPanel">
+			<div class="logos">
+				<a target="_blank" href="http://www.geopedia.world/"><img src="img/geopedia_white.png" /></a>
+				<a target="_blank" href="http://www.sinergise.com/"><img src="img/sinergise_white.png" /></a>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<div id="map">
+			<div id="resultsHolder">
+                <div class="sortHeader">
+                    <span>Sort by:</span>
+                    <span id="sortHolder">
+                        <a id="sortDate" title="Sensing time" class="first active"><i class="icon icon-calendar"></i></a>
+                        <a id="sortCoverage"title="Coverage data" ><i class="icon icon-pie-chart"></i></a>
+                        <a id="sortCloud"title="Cloud data" ><i class="icon icon-cloud"></i></a>
+                    </span>
+                    <span style="margin-left: 10px;">Order:</span>
+                    <span id="orderHolder">
+                        <a id="ordAsc" title="Ascending" class="first"><i class="icon icon-asc"></i></a>
+                        <a id="ordDesc" title="Descending" class="active"><i class="icon icon-desc"></i></a>
+                    </span>
+                </div>
+				<!--<h2>Results</h2>-->
+				<!--<a id="hideResults">X</a>-->
+				<div id="mapResults"></div>
+				<div id="resultsPaging">
+					<button id="pagPrev" class="pagNav prev" title="Previous page"></button>
+					<button id="pagNext" class="pagNav next" title="Next page"></button>
+					<span id="pagCounter"></span>
+				</div>
+				<div id="resultsLoader" style="display: none;"><i class="icon icon-spinner"></i></div>
+			</div>
+			<iframe frameborder="0" height="100%" id="geopediaWidget" scrolling="no" 
+				src="http://www.geopedia.world?widgetId=sentinelBrowser&showStatusBar=false&sidebar=right&panZoomMode=ZOOM&panZoomPosition=BOTTOM_RIGHT" width="100%"></iframe>
+			
+			<div id="iframeFix"></div>
+			<div id="settings">
+				<h3 class="dateHeading">Date range: <a class="active" id="sliderMode">Slider</a><a id="manualMode">Manual</a></h3>				
+				<div id="dateSlider" class="dateHolder"></div>
+				<div id="manualDate" class="dateHolder">
+					<label>From:</label><input id="startDate" size="9" />
+					<label>To:</label><input id="endDate" size="9" />
+				</div>
+				<h3>Cloud coverage:</h3>				
+				<div id="cloudSlider"></div>
+			</div>
+		</div>
+	</div>
+		
+	<div id="loadingPanel" class="mainLoadingWrap">
+		<div class="inner">
+			<h1>Sentinel Image browser</h1>
+			<div class="spinner">
+			  <div class="bounce1"></div>
+			  <div class="bounce2"></div>
+			  <div class="bounce3"></div>
+			</div>
+			<p>Loading application. Please wait ...</p>
+		</div>
+	</div>
+    <div id="featureDialog" style="display: none;"></div>
+	
+	<script>
+// 	if(jQuery.cookieBar('cookies')){
+// 	  //Google Analytics or other code here
+ 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+ 	  ga('create', 'UA-71798570-1', 'auto');
+ 	  ga('send', 'pageview');
+// 	}
+	
+	</script>
+</body>
+</html>
