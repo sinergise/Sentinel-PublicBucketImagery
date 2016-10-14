@@ -175,7 +175,7 @@ $(document).ready(function() {
 		},
 		defaultValues : {
 			min : 0,
-			max : 10
+			max : 20
 		},
 		step : 1,
 		arrows : false,
