@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Sentinel-2 on AWS</title>
+		<title>Sentinel on AWS</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
 		<meta http-equiv="cache-control" content="max-age=0" />
 		<meta http-equiv="cache-control" content="no-cache" />
@@ -60,8 +60,8 @@
 					<div class="row">
 						<div class="col">
 							<div class="page-info page-info-simple">
-								<h1 class="page-title">Sentinel-2 on AWS</h1>
-								<h2 class="page-description">Sentinel-2 data is available for anyone to use via Amazon S3.</h2>
+								<h1 class="page-title">Sentinel on AWS</h1>
+								<h2 class="page-description">Setinel-1 and Sentinel-2 data is available for anyone to use via Amazon S3.</h2>
 							</div>
 						</div>
 					</div>
@@ -84,8 +84,8 @@
 				<div class="content">
 					<div class="category-info" id="block-view">
 						<a id="PublicBucket" name="PublicBucket"></a>
-                        <h3 class="category-block-intro-title">Sentinel-2 data is available for anyone via Amazon S3, either over Internet or within AWS. All Sentinel-2 scenes are made available, often within hours of production. </h3>
-						<h4 class="category-description">Earth observation data provided by the <a href="http://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2">Sentinel-2</a> satellites are revolutionizing the market of space applications. 
+                        <h3 class="category-block-intro-title">Sentinel data is available for anyone via Amazon S3. Sentinel scenes are made available, often within hours of production. </h3>
+						<h4 class="category-description">Earth observation data provided by the <a href="http://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-1">Sentinel-1</a> and <a href="http://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2">Sentinel-2</a> satellites are revolutionizing the market of space applications. 
 						Free, full and open access to data with very short revisit times, high spatial resolution, and good spectral resolution can benefit several sectors - agriculture, environmental and land-change monitoring, natural disaster response, insurance and others.</h4>						
 								
 						<div class="block-view ">
@@ -94,13 +94,19 @@
                                 	<a id="SentinelProject" name="SentinelProject"></a>
 								</div>
                                 <div class="block-item-content"> 
-                                	<p>The Sentinel-2 mission is a land monitoring constellation of two satellites (Sentinel-2A was launched on 23 June 2015 and Sentinel-2B will follow in the second half of 2016) 
+					<p><B>The Sentinel-1 mission</b> carries an advanced radar instrument to provide an all-weather, day-and-night supply of imagery of Earth’s surface. As a constellation of two satellites 
+						orbiting 180° apart, the mission images the entire Earth every six days. The mission benefits numerous services. For example, services that relate to the monitoring of Arctic 
+						sea-ice extent, routine sea-ice mapping, surveillance of the marine environment, including oil-spill monitoring and ship detection for maritime security, monitoring land-surface 
+						for motion risks, mapping for forest, water and soil management and mapping to support humanitarian aid and crisis situations. </p>
+                                 </div>
+
+				<div class="block-item-content"> 
+					<p><b>The Sentinel-2 mission</b> is a land monitoring constellation of two satellites (Sentinel-2A was launched on 23 June 2015 and Sentinel-2B will follow in the second half of 2016) 
                                         that provide high resolution optical imagery and provide continuity for the current SPOT and Landsat missions. The mission will provide a global coverage of the 
                                         Earth's land surface every 10 days with one satellite (and 5 days with 2 satellites), making the data of great use in on-going studies.</p>
                                		<p>Sentinel-2 delivers high-resolution optical images for land monitoring, emergency response and security services. The satellite carries a multispectral imager 
                                             with a swath of 290 km. The imager provides a versatile set of 13 spectral bands spanning from the visible and near infrared to the shortwave infrared, featuring four 
                                             spectral bands at 10 m, six bands at 20 m and three bands at 60 m spatial resolution.</p>
-                                	<p>Sentinel-2 is the result of close collaboration between <a href="http://www.esa.int/">ESA</a>, the European Commission, industry, service providers and data users.</p>
                                  </div>
 							</div>
 						</div>
@@ -108,7 +114,7 @@
 					<div class="category-info " id="grid-view">
 						<a id="AboutData" name="AboutData"></a>
                         <h3 class="category-title"> About the data</h3>
-                        <h4 class="category-description">Sentinel-2 data available on Amazon S3 allows anyone can use it to create new products on the AWS cloud without needing to worry about the cost of storing data or the time required to download it.</h4>					</div>
+                        <h4 class="category-description">Sentinel data available on Amazon S3 allows anyone can use it to create new products on the AWS cloud without needing to worry about the cost of storing data or the time required to download it.</h4>					</div>
 					<div class="grid-view js-grid-view">
 					<table class="table table-striped">
 					<tbody>
@@ -122,7 +128,11 @@
 					</tr>
 					<tr>
 					<td class="table-title">FORMAT</td>
-					<td><a href="http://jpeg.org/jpeg2000/">.jp2</a>, .txt </td>
+					<td><ul>
+						<li><a href="http://www.cogeo.org/>cloud optimized geotiff</a> for Sentinel-1</li>
+						<li><a href="http://jpeg.org/jpeg2000/">.jp2</a> for Sentinel-2</li>
+					    </ul></td>
+						
 					</tr>
 					<tr>
 					<td class="table-title">LICENSE</td>
@@ -135,6 +145,7 @@
 					<tr>
 					<td class="table-title">LOCATION</td>
 						<td><ul>
+							<li>s3://sentinel-s1-l1c in EU Central region for Sentinel-1 GRD data (one year rolling archive, starting 1st of May 2017)</li>
 							<li>s3://sentinel-s2-l1c in EU Central region for L1C data</li>
 							<li>s3://sentinel-s2-l2a in EU Central region for L2A data over Europe, dating from 28th of March onward (the data is in a <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays</a> bucket which means that you can access it freely within the EU Central region, but you will incur charges if you download it elsewhere)</li>
 						</ul></td>
@@ -146,14 +157,46 @@
 					</tbody></table>
 
 					</div>
+					
+					
 					<div class="category-block">
 						<a id="DataStructure" name="DataStructure"></a>
-                        <h3 class="category-block-title">Data structure</h3>
+                        <h3 class="category-block-title">Data structure for Sentinel-1</h3>
+                        <p>Each file is its own object in Amazon S3..
+						The basic data format is the following:</p>
+                        <p class="code">GRD/[year]/[month]/[day]/[mode]/[polarization]/[product identifier]</p>
+               			<p>For example, the files for individual scene are available in the following location: 
+                                    <span class="blue">s3://sentinel-s1-l1c/GRD/2018/1/11/EW/DH/S1A_EW_GRDH_1SDH_20180111T110409_20180111T110513_020106_02247C_FBAB/</span></a></p></p>
+                       	<p>Where:</p>
+						<ul class="category-block-content">
+                                           <li class="category-block-content-item">
+								<p><span class="code">[year]</span> = e.g. <span class="blue">2018</span> - is the year the data was collected.</p>
+							</li>
+                                           <li class="category-block-content-item">
+								<p><span class="code">[month]</span> = e.g. <span class="blue">1</span> - is the month of the year the data was collected (without leading zeros).</p>
+							</li>
+                                           <li class="category-block-content-item">
+								<p><span class="code">[day]</span> = e.g. <span class="blue">11</span> - is the day of the month the data was collected (without leading zeros).</p>
+							</li>
+							 <li class="category-block-content-item">
+								<p><span class="code">[mode]</span> = e.g. <span class="blue">DH</span> - EW, IW, S1, S2, S3, S4, S5, S6</p>
+							</li>
+							 <li class="category-block-content-item">
+								<p><span class="code">[polarization]</span> = e.g. <span class="blue">EW</span> - DH, DV, SH, SV</p>
+							</li>							
+							<li class="category-block-content-item">
+							<p><span class="code">product identifier</span> - original product identifier</p>
+							</li>
+						</ul>
+					</div>
+					<div class="category-block">
+						<a id="DataStructure" name="DataStructure"></a>
+                        <h3 class="category-block-title">Data structure for Sentinel-2</h3>
                         <p>Each file is its own object in Amazon S3. The data are organised per tiles using the <a href="https://en.wikipedia.org/wiki/Military_grid_reference_system">Military grid system</a> (<a href="https://sentinels.copernicus.eu/documents/247904/1955685/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml/ec05e22c-a2bc-4a13-9e84-02d5257b09a8">latest KML file</a>).
 						The basic data format is the following:</p>
                         <p class="code">tiles/[UTM code]/latitude band/square/[year]/[month]/[day]/[sequence]/DATA</p>
                			<p>For example, the files for individual scene are available in the following location: <a href="http://sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com/#tiles/10/S/DG/2015/12/7/0/">
-                                    http://sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com/#tiles<span class="blue">/10/S/DG/2015/12/7/0/</span></a></p></p>
+                                    s3://sentinel-s2-l1c/tiles<span class="blue">/10/S/DG/2015/12/7/0/</span></a></p></p>
                        	<p>Where:</p>
 						<ul class="category-block-content">
 							<li class="category-block-content-item">
@@ -184,17 +227,16 @@
 						<h4 class="category-description">Metadata</h4>
 						<p>The metadata of the product, which tile is part of, are available in parallel folder (<span class="code">productInfo.json</span> contains the name of the product). This can be found in <span class="code">products/[year]/[month]/[day]/[product name]</span>.
 					</div>
-					    <div class="category-block" id="embedMap">
+							
+					<div class="category-block" id="embedMap">
                    			<a id="ImagerySearch" name="ImagerySearch"></a>
                        		<h3 class="category-block-title">Browse through data</h3>
 							<p>You can browse through the contents of the Sentinel-2 Amazon Public Data set via the <a href="image-browser/">Sentinel Image browser</a>.</p>
-                   			<!-- <a class="button large blue" href="http://portal-test.geopedia.world/sentinel/index.html" target="_blank">Sentinel Image browser</a>  -->
 				    	</div>
 					<div class="category-info " id="mixed-view">
 						<a id="AccessingData" name="AccessingData"></a>
                         <h3 class="category-title">Accessing the Data</h3>
                         <h4 class="category-description">Users can search for files using the index pages and access individual or related sets of files through the Sentinel Public bucket.</h4> 
-                        <h4 class="category-description">The address for the public bucket is: <br /><a href="http://sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com">sentinel-s2-l1c.s3-website.eu-central-1.amazonaws.com</a> (note that for now only L1C data are available over Internet; L2A is available for AWS users only)</h4>
                   	</div>
                   	<div class="category-info">
 						<a id="FeaturedUses" name="FeaturedUses"></a>
