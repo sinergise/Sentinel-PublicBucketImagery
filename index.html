@@ -165,11 +165,14 @@
                         <h3 class="category-block-title">Data structure for Sentinel-1</h3>
                         <p>Each file is its own object in Amazon S3..
 						The basic data format is the following:</p>
-                        <p class="code">GRD/[year]/[month]/[day]/[mode]/[polarization]/[product identifier]</p>
+                        <p class="code">[product type]/[year]/[month]/[day]/[mode]/[polarization]/[product identifier]</p>
                			<p>For example, the files for individual scene are available in the following location: 
                                     <span class="blue">s3://sentinel-s1-l1c/GRD/2018/1/11/EW/DH/S1A_EW_GRDH_1SDH_20180111T110409_20180111T110513_020106_02247C_FBAB/</span></a></p></p>
                        	<p>Where:</p>
 						<ul class="category-block-content">
+                                           <li class="category-block-content-item">
+								<p><span class="code">[product type]</span> =  <span class="blue">GRD</span> - GRD or SLC</p>
+							</li>
                                            <li class="category-block-content-item">
 								<p><span class="code">[year]</span> = e.g. <span class="blue">2018</span> - is the year the data was collected.</p>
 							</li>
@@ -180,10 +183,10 @@
 								<p><span class="code">[day]</span> = e.g. <span class="blue">11</span> - is the day of the month the data was collected (without leading zeros).</p>
 							</li>
 							 <li class="category-block-content-item">
-								<p><span class="code">[mode]</span> = e.g. <span class="blue">DH</span> - EW, IW, WV, EN, N1-N6, S1-S6, IS1-IS7</p>
+								<p><span class="code">[mode]</span> = e.g. <span class="blue">EW</span> -  IW, EW, WV, IW1-IW3, EW1-EW5, WV1-WV2, S1-S6, IS1-IS7; note that modes depend on the [product type[</p>
 							</li>
 							 <li class="category-block-content-item">
-								<p><span class="code">[polarization]</span> = e.g. <span class="blue">EW</span> - DH, DV, SH, SV</p>
+								<p><span class="code">[polarization]</span> = e.g. <span class="blue">DH</span> - DH, DV, SH, SV, VH, HV, HV, VH; note that polarizations depend on the observation scenario </p>
 							</li>							
 							<li class="category-block-content-item">
 							<p><span class="code">product identifier</span> - original product identifier</p>
